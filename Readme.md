@@ -9,12 +9,12 @@
 
 ## I. Sujet (checkList)
 
-- [ ] Créer une image Docker
-  - [ ] un stage
-  - [ ] exécution de l'API developpé avant (<i>[WIK-DPS-TP01](https://github.com/Hyuga974/WIK-DPS-TP01)</i>)
+- [X] Créer une image Docker
+  - [X] un stage
+  - [X] exécution de l'API developpé avant (<i>[WIK-DPS-TP01](https://github.com/Hyuga974/WIK-DPS-TP01)</i>)
 - [ ] Image optimisé
-- [ ] Scanner l'image
-  - [ ] Docker Scan
+- [X] Scanner l'image
+  - [X] Docker Scan
   - [ ] Trivy
   - [ ] Clair
 - [ ] Utiliser un user spécifique
