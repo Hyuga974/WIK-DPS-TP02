@@ -1,21 +1,14 @@
-# # //syntax=docker/dockerfile:1
-# FROM node:18.11.0
-# COPY . /app
-# WORKDIR /app
-# RUN npm install
-# RUN npx tsc
-# CMD ["node", "build/index.js"]
-
-# //syntax=docker/dockerfile:1
-FROM alpine
-RUN apk add nodejs npm
-RUN addgroup -S groupUser && adduser -S toto -G groupUser
-
+FROM node:18-alpine as builder
 WORKDIR /app
-COPY package.json  package-lock.json ./
+COPY package.json package-lock.json ./
 RUN npm install
-USER toto
 COPY . .
-RUN npx tsc
+RUN npm run build
+
+FROM node:18-alpine
+WORKDIR /app
+COPY --from=builder /app/package.json ./
+RUN npm install --only=production
+COPY --from=builder /app/build ./build
 EXPOSE 3000
 CMD ["node", "build/index.js"]
