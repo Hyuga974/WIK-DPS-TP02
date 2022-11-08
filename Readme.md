@@ -20,9 +20,9 @@
   - [ ] Trivy
   - [ ] Clair
 - [ ] Utiliser un user spécifique
-- [ ] Créer un seconde image comme la précédente 
-  - [ ] Plusieurs Stage
-    - [ ] build
+- [X] Créer un seconde image comme la précédente 
+  - [X] Plusieurs Stage
+    - [X] build
     - [ ] exécution
   
 ## II. Explication
